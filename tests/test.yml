@@ -2,6 +2,7 @@
 ---
 - hosts: localhost
   gather_facts: yes
+  become: yes
   roles:
     - name: ../..
       #open_port: 80

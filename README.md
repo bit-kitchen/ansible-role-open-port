@@ -3,6 +3,8 @@ ansible-role-open-port
 
 An ansible role that opens port in firewalld.
 
+Note: chances are you need to connect as root or use *become* to use this role.
+
 Requirements
 ------------
 
