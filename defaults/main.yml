@@ -1,0 +1,4 @@
+---
+# Note: We cannot use "port" as it's reserved by Ansible.
+#open_port:
+#open_protocol:

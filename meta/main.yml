@@ -1,0 +1,21 @@
+galaxy_info:
+  author: bit_kitchen
+  role_name: open_port
+
+  description: Open port in firewalld
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  # https://galaxy.ansible.com/api/v1/platforms/
+  platforms:
+  - name: GenericLinux
+    versions:
+    - any
+
+  galaxy_tags:
+  - firewall
+  - port
+  - firewalld
+
+dependencies: []

@@ -1,0 +1,11 @@
+---
+- meta: end_play
+  when: open_port is undefined or open_port == ""
+
+- name: Gathering Service Facts
+  service_facts: {}
+
+- import_tasks: firewalld.yml
+  when:
+  - services["firewalld.service"] is defined
+  - services["firewalld.service"].state == "running"

@@ -1,0 +1,8 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: localhost
+  gather_facts: yes
+  roles:
+    - name: ../..
+      #open_port: 80
+      #open_protocol: tcp
