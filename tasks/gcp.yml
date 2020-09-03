@@ -1,0 +1,20 @@
+---
+- name: Install Python packages required for gcp_compute_firewall
+  become: yes
+  package:
+    name:
+    - python-requests
+    - python-google-auth
+
+- name: Configure GCP Firewall
+  gcp_compute_firewall:
+    name: "{{ _gcp_rule_name }}"
+    description: "{{ _gcp_rule_description }}"
+    allowed:
+      - ip_protocol: "{{ open_protocol | default('tcp', true) }}"
+        ports: ["{{ open_port }}"]
+      - ip_protocol: "{{ open_protocol | default('udp', true) }}"
+        ports: ["{{ open_port }}"]
+    auth_kind: machineaccount
+    project: "{{ gcp_project }}"
+    service_account_email: "{{ gcp_service_account_email }}"

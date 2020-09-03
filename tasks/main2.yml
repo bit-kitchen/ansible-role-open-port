@@ -7,3 +7,11 @@
   when:
   - services["firewalld.service"] is defined
   - services["firewalld.service"].state == "running"
+
+- name: Include tasks for GCP Firewall
+  include_tasks: gcp.yml
+  when:
+  - ansible_dns.search is defined
+  - "'google.internal.' in ansible_dns.search"
+  - gcp_project is defined
+  - gcp_service_account_email is defined

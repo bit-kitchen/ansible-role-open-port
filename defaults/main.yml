@@ -2,3 +2,10 @@
 # Note: We cannot use "port" as it's reserved by Ansible.
 #open_port:
 #open_protocol:
+
+# GCP firewall variables
+#gcp_project: ""
+#gcp_service_account_email: ""
+# (Optional)
+#gcp_rule_name: ""
+#gcp_rule_description: ""
