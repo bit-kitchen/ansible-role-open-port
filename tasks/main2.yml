@@ -1,0 +1,8 @@
+---
+- name: Gathering Service Facts
+  service_facts: {}
+
+- import_tasks: firewalld.yml
+  when:
+  - services["firewalld.service"] is defined
+  - services["firewalld.service"].state == "running"

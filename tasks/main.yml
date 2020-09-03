@@ -1,11 +1,6 @@
 ---
-- meta: end_play
-  when: open_port is undefined or open_port == ""
-
-- name: Gathering Service Facts
-  service_facts: {}
-
-- import_tasks: firewalld.yml
+- name: Open Port
+  include_tasks: main2.yml
   when:
-  - services["firewalld.service"] is defined
-  - services["firewalld.service"].state == "running"
+  - open_port is defined
+  - open_port != ""
