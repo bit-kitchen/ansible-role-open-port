@@ -6,6 +6,24 @@
     - python-requests
     - python-google-auth
 
+- name: Get GCP Project ID
+  uri:
+    url: http://metadata.google.internal/computeMetadata/v1/project/project-id
+    headers:
+      Metadata-Flavor: Google
+    return_content: yes
+  register: project_id_uri
+  when: gcp_project is undefined
+
+- name: Get GCP instance default service account email
+  uri:
+    url: http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
+    headers:
+      Metadata-Flavor: Google
+    return_content: yes
+  register: service_account_email_uri
+  when: gcp_service_account_email is undefined
+
 - name: Configure GCP Firewall
   gcp_compute_firewall:
     name: "{{ _gcp_rule_name }}"
@@ -16,5 +34,5 @@
       - ip_protocol: "{{ open_protocol | default('udp', true) }}"
         ports: ["{{ open_port }}"]
     auth_kind: machineaccount
-    project: "{{ gcp_project }}"
-    service_account_email: "{{ gcp_service_account_email }}"
+    project: "{{ _gcp_project }}"
+    service_account_email: "{{ _gcp_service_account_email }}"

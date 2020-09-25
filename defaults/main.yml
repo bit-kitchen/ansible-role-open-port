@@ -3,9 +3,8 @@
 #open_port:
 #open_protocol:
 
-# GCP firewall variables
+# GCP firewall variables (optional)
 #gcp_project: ""
 #gcp_service_account_email: ""
-# (Optional)
 #gcp_rule_name: ""
 #gcp_rule_description: ""
