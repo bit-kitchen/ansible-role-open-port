@@ -2,7 +2,7 @@ galaxy_info:
   author: bit_kitchen
   role_name: open_port
 
-  description: Open port in firewalld
+  description: Open port in firewalld and/or GCP Firewall
   license: MIT
 
   min_ansible_version: 2.4
