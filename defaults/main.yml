@@ -2,6 +2,7 @@
 # Note: We cannot use "port" as it's reserved by Ansible.
 #open_port:
 #open_protocol:
+#open_state:
 
 # GCP firewall variables (optional)
 #gcp_project: ""
