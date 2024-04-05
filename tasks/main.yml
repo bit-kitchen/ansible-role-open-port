@@ -2,5 +2,5 @@
 - name: Open Port
   include_tasks: main2.yml
   when:
-  - open_port is defined
-  - open_port != ""
+    - open_port is defined
+    - open_port != ""
