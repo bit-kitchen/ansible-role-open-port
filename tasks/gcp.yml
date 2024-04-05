@@ -25,7 +25,7 @@
   when: gcp_service_account_email is undefined
 
 - name: Configure GCP Firewall
-  gcp_compute_firewall:
+  google.cloud.gcp_compute_firewall:
     name: "{{ _gcp_rule_name }}"
     description: "{{ _gcp_rule_description }}"
     allowed:
