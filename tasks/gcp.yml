@@ -1,6 +1,6 @@
 ---
 - name: Install Python packages required for gcp_compute_firewall
-  become: yes
+  become: true
   package:
     name:
       - python-requests
@@ -11,7 +11,7 @@
     url: http://metadata.google.internal/computeMetadata/v1/project/project-id
     headers:
       Metadata-Flavor: Google
-    return_content: yes
+    return_content: true
   register: project_id_uri
   when: gcp_project is undefined
 
@@ -20,7 +20,7 @@
     url: http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
     headers:
       Metadata-Flavor: Google
-    return_content: yes
+    return_content: true
   register: service_account_email_uri
   when: gcp_service_account_email is undefined
 

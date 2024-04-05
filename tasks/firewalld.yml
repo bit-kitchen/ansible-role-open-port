@@ -3,12 +3,12 @@
   firewalld:
     port: "{{ open_port }}/{{ open_protocol | default('tcp', true) }}"
     state: "{{ open_state | default('enabled', true) }}"
-    permanent: yes
-    immediate: yes
+    permanent: true
+    immediate: true
 
 - name: Configure firewalld
   firewalld:
     port: "{{ open_port }}/{{ open_protocol | default('udp', true) }}"
     state: "{{ open_state | default('enabled', true) }}"
-    permanent: yes
-    immediate: yes
+    permanent: true
+    immediate: true
