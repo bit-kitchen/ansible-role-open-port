@@ -1,13 +1,13 @@
 ---
 - name: Install Python packages required for gcp_compute_firewall
   become: true
-  package:
+  ansible.builtin.package:
     name:
       - python-requests
       - python-google-auth
 
 - name: Get GCP Project ID
-  uri:
+  ansible.builtin.uri:
     url: http://metadata.google.internal/computeMetadata/v1/project/project-id
     headers:
       Metadata-Flavor: Google
@@ -16,7 +16,7 @@
   when: gcp_project is undefined
 
 - name: Get GCP instance default service account email
-  uri:
+  ansible.builtin.uri:
     url: http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
     headers:
       Metadata-Flavor: Google

@@ -1,15 +1,15 @@
 ---
 - name: Gathering Service Facts
-  service_facts: {}
+  ansible.builtin.service_facts: {}
 
 - name: Include tasks for firewalld
-  include_tasks: firewalld.yml
+  ansible.builtin.include_tasks: firewalld.yml
   when:
     - services["firewalld.service"] is defined
     - services["firewalld.service"].state == "running"
 
 - name: Include tasks for GCP Firewall
-  include_tasks: gcp.yml
+  ansible.builtin.include_tasks: gcp.yml
   when:
     - ansible_dns.search is defined
     - "'google.internal.' in ansible_dns.search"
