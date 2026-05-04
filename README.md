@@ -1,7 +1,8 @@
 ansible-role-open-port
 ======================
 
-[![Ansible Role: bit_kitchen.open_port](https://img.shields.io/ansible/role/51886.svg)](https://galaxy.ansible.com/bit_kitchen/open_port)
+[![Ansible Role: bit_kitchen.open_port](https://img.shields.io/ansible/role/d/bit_kitchen/open_port
+)](https://galaxy.ansible.com/ui/standalone/roles/bit_kitchen/open_port/)
 [![Build Status](https://travis-ci.org/bit-kitchen/ansible-role-open-port.svg?branch=master)](https://travis-ci.org/bit-kitchen/ansible-role-open-port)
 
 An ansible role that opens port in firewalld and/or GCP Firewall.
