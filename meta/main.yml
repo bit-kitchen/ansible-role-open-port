@@ -5,7 +5,7 @@ galaxy_info:
   description: Open port in firewalld and/or GCP Firewall
   license: MIT
 
-  min_ansible_version: 2.4
+  min_ansible_version: "2.4"
 
   # https://galaxy.ansible.com/api/v1/platforms/
   platforms:
