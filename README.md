@@ -40,25 +40,25 @@ Example Playbook
 - hosts: servers
   roles:
   # Open 80/tcp
-  - role: bit_kitchen.port
+  - role: bit_kitchen.open_port
     open_port: 80
     open_protocol: tcp
 
   # Open 53/udp
-  - role: bit_kitchen.port
+  - role: bit_kitchen.open_port
     open_port: 53
     open_protocol: udp
 
   # Open 443/tcp and 443/udp
-  - role: bit_kitchen.port
+  - role: bit_kitchen.open_port
     open_port: 443
 
   # Do nothing
-  - role: bit_kitchen.port
+  - role: bit_kitchen.open_port
 
   # Open 80/tcp and configure GCP Firewall using machine account read from
   # metadata server, and specify rule name and description explicitly.
-  - role: bit_kitchen.port
+  - role: bit_kitchen.open_port
     open_port: 80
     open_protocol: tcp
     gcp_rule_name: web
@@ -66,7 +66,7 @@ Example Playbook
 
   # Open 443/tcp and configure GCP Firewall using explicitly specified project
   # and account.
-  - role: bit_kitchen.port
+  - role: bit_kitchen.open_port
     open_port: 443
     open_protocol: tcp
     gcp_project: my-project-name
